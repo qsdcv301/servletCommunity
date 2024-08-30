@@ -23,7 +23,8 @@ public class RegisterOk extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		request.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
-
+		int postcode = 0;
+		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String userid = request.getParameter("usrid");
@@ -31,7 +32,10 @@ public class RegisterOk extends HttpServlet {
 		String username = request.getParameter("username");
 		String email = request.getParameter("email");
 		String tel = request.getParameter("tel");
-		String userpost = request.getParameter("userpost");
+		String userpost = request.getParameter("postcode");
+		if(userpost != null) {
+			postcode = Integer.parseInt(userpost);
+		}
 		String useraddr1 = request.getParameter("useraddr1");
 		String useraddr2 = request.getParameter("useraddr2");
 		String useraddrexc = request.getParameter("useraddrexc");
@@ -49,7 +53,7 @@ public class RegisterOk extends HttpServlet {
 			pstmt.setString(3, username);
 			pstmt.setString(4, email);
 			pstmt.setString(5, tel);
-			pstmt.setInt(6, Integer.parseInt(userpost));
+			pstmt.setInt(6, postcode);
 			pstmt.setString(7, useraddr1);
 			pstmt.setString(8, useraddr2);
 			pstmt.setString(9, useraddrexc);

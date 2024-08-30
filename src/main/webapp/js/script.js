@@ -47,17 +47,22 @@ $(function () {
         }
     });
 
+    $.validator.addMethod('customPattern', function (value, element, param) {
+        return this.optional(element) || param.test(value);
+    }, "아이디는 알파벳 대, 소문자와 숫자만 허용합니다.");
+
     $('#registerform').validate({
         rules: {
             usrid: {
                 required: true,
                 minlength: 3,
-                maxlength: 9
+                maxlength: 9,
+                customPattern: /^[a-zA-Z0-9]{3,9}$/,
+                remote: "findid"
             },
             usrpass: { required: true, minlength: 5 },
+            reusrpass: { required: true, equalTo: "#usrpass" },
             username: { required: true },
-
-            reuserpass: { required: true, equalTo: "#usrpass" },
             emailid: { required: true },
             emailDomain: {
                 require_from_group: [1, ".emailgroup"]
@@ -65,30 +70,50 @@ $(function () {
             emailDomain2: {
                 require_from_group: [1, ".emailgroup"]
             }
-
         },
         messages: {
             usrid: {
                 required: '필수 입력 항목입니다.',
                 minlength: '{0}글자 이상 입력하세요.',
-                maxlength: '아이디가 너무 길어요. {0}자 이하로 입력하세요.'
+                maxlength: '아이디가 너무 길어요. {0}자 이하로 입력하세요.',
+                remote: '아이디가 사용중입니다. 다른 아이디를 이용하세요.'
             },
-            usrpass: '비밀번호를 입력하세요.',
+            usrpass: {
+                required: '비밀번호를 입력하세요.',
+                minlength: '비밀번호는 최소 {0}자 이상이어야 합니다.'
+            },
+            reusrpass: {
+                required: '비밀번호를 확인하세요.',
+                equalTo: '비밀번호가 일치하지 않습니다.' // 두 비밀번호가 일치하지 않을 때의 메시지
+            },
             username: '이름을 입력하세요.',
-            reuserpass: '비밀번호가 맞지 않습니다.',
             emailid: '이메일을 입력하세요.',
             emailDomain: '이메일을 입력하세요.',
             emailDomain2: '이메일을 입력하세요.'
         },
         submitHandler: function (form) {
-            const email = $('#emailid').val() + "@" + ($("#emailDomain").val() === 'act' ?
-                $('#emailDomain2').val() :
-                $('#emailDomain').val());
+            const email = $('#emailid').val() + "@" + ($("#emailDomain").val() === 'act' ? $('#emailDomain2').val() : $('#emailDomain').val());
             $("#email").val(email);
-            const tel = $("#tel1").val() + "-" + $("#tel2").val() + "-" + $("#tel3").val();
-            $("#tel").val(tel);
+            $.ajax({
+                url: "findemail",
+                data: {
+                    useremail: email
+                },
+                success: function (res) {
+                    if (res.exists) {
+                        console.log(res);
+                        alert("이미 존재하는 이메일입니다.");
+                    } else {
+                        const tel = $("#tel1").val() + "-" + $("#tel2").val() + "-" + $("#tel3").val();
+                        $("#tel").val(tel);
+                        form.submit();
+                    }
+                },
+                error: function () {
+                    alert("이메일 검증중 오류가 발생했습니다.");
+                }
+            });
 
-            form.submit();
         }
     });
 
