@@ -181,14 +181,15 @@ a.blogs {
 }
 
 /*************** 아이디, 비밀번호 찾기 ***************/
+.rg.findidpass {
+    padding-bottom: 50px;
+}
+
 #findidform,
 #findpwdform {
     margin: 30px 50px 50px;
     padding: 50px;
     border: 1px solid #ddd;
-}
-.rg.findidpass{
-    padding-bottom: 1px;
 }
 
 footer {

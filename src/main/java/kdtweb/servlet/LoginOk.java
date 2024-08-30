@@ -84,14 +84,21 @@ public class LoginOk extends HttpServlet {
 		} finally {
 			if (conn != null) {
 				try {
-					conn.close();
+					rs.close();
 				} catch (SQLException e) {
 
 				}
 			}
-			if (conn != null) {
+			if (pstmt != null) {
 				try {
 					pstmt.close();
+				} catch (SQLException e) {
+
+				}
+			}
+			if (rs != null) {
+				try {
+					conn.close();
 				} catch (SQLException e) {
 
 				}
