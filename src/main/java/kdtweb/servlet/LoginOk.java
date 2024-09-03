@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import kdtweb.dao.MySqlConnect;
+import kdtweb.dao.KdtwebDao;
 
 @WebServlet("/loginok")
 public class LoginOk extends HttpServlet {
@@ -31,7 +31,8 @@ public class LoginOk extends HttpServlet {
 		String userpass = request.getParameter("userpass");
 		String rid = request.getParameter("rid");
 
-		MySqlConnect dbcon = new MySqlConnect();
+//		MySqlConnect dbcon = new MySqlConnect();
+		KdtwebDao dbcon = new KdtwebDao();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -79,10 +80,10 @@ public class LoginOk extends HttpServlet {
 					out.println(alert);
 				}
 			}
-		} catch (SQLException | ClassNotFoundException e) {
+		} catch (SQLException e) {
 			System.out.println("db접속 에러" + e.getMessage());
 		} finally {
-			if (conn != null) {
+			if (rs != null) {
 				try {
 					rs.close();
 				} catch (SQLException e) {
@@ -96,7 +97,7 @@ public class LoginOk extends HttpServlet {
 
 				}
 			}
-			if (rs != null) {
+			if (conn != null) {
 				try {
 					conn.close();
 				} catch (SQLException e) {

@@ -69,6 +69,13 @@ public class RegisterOk extends HttpServlet {
 		} catch (SQLException | ClassNotFoundException e) {
 			System.out.println("db접속 에러" + e.getMessage());
 		} finally {
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+
+				}
+			}
 			if (conn != null) {
 				try {
 					conn.close();
@@ -76,14 +83,7 @@ public class RegisterOk extends HttpServlet {
 
 				}
 			}
-			if (conn != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-
-				}
-			}
-
+		
 		}
 	}
 
