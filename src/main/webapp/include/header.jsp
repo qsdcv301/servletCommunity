@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/remixicon.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pycs-layout.jquery.js"></script>
