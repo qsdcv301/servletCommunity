@@ -32,7 +32,7 @@ public class RegisterResult extends HttpServlet {
 		user.setUserpost(Integer.parseInt(request.getParameter("post")));
 		user.setUseraddr1(request.getParameter("addr1"));
 		user.setUseraddr2(request.getParameter("addr2"));
-		user.setUseradderexc(request.getParameter("addrexc"));
+		user.setUseraddrexc(request.getParameter("addrexc"));
 		out.println("<html><head></head><body>");
 		out.println("<h1>임시 데이터 테스트</h1>");
 		out.println("<p> 아이디 : "+user.getUserid()+"</p>");

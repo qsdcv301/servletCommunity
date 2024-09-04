@@ -1,210 +1,191 @@
 body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background: #eee;
-    font-size: 16px;
+  font-family: "Noto Sans KR", sans-serif;
+  background: #eee;
+  font-size: 16px;
 }
 
 header {
-    top: 20px;
-    left: 0;
-    width: 300px;
-    background: #fff;
-    padding: 50px 30px;
-    height: calc(100% - 50px);
+  top: 20px;
+  left: 0;
+  width: 300px;
+  background: #fff;
+  padding: 50px 30px;
+  height: calc(100% - 50px);
 }
-
 .logo img {
-    max-width: 100%;
+  max-width: 100%;
 }
-
 .login {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 40px 0 10px;
-    background: #eee;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 40px 0 10px;
+  background: #eee;
 }
-
 .login input {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
-
 .pl-300 {
-    padding-left: 320px;
-    padding-top: 20px;
+  padding-left: 320px;
+  padding-top: 20px;
 }
-
 .comu-box {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 30px;
-    height: 423px;
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  height: 423px;
 }
-
 .comu-box h2 {
-    border-bottom: 1px solid #ddd;
-    font-size: 18px;
-    font-weight: 700;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
-
 .picture img {
-    max-width: 100%;
-    filter: blur(1px);
-    transition: all 300ms;
+  max-width: 100%;
+  filter: blur(1px);
+  transition: all 300ms;
 }
-
 .picture a:hover img {
-    filter: blur(0);
-    transform: scale(1.2);
+  filter: blur(0);
+  transform: scale(1.2);
 }
-
 .picture {
-    position: relative;
-    display: block;
-    overflow: hidden;
+  position: relative;
+  display: block;
+  overflow: hidden;
 }
-
 .txt-box {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    left: 0;
-    bottom: 0;
-    padding: 15px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  left: 0;
+  bottom: 0;
+  padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /**** 공지사항 ****/
 .noticeul li {
-    padding: 8px 10px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px dashed #ddd;
-    transition: all 300ms;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #ddd;
+  transition: all 300ms;
 }
-
 .noticeul li:hover {
-    background: #ddd;
+  background: #ddd;
 }
-
 .noticeul li a {
-    color: #333;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 span.notice {
-    padding: 1px 15px;
-    margin-right: 10px;
-    color: #fff;
-    border-radius: 5px;
-    display: inline-block;
-    width: 86px;
-    text-align: center;
+  padding: 1px 15px;
+  margin-right: 10px;
+  color: #fff;
+  border-radius: 5px;
+  display: inline-block;
+  width: 86px;
+  text-align: center;
 }
-
 .notice1 {
-    background: #e7717d;
+  background: #e7717d;
 }
-
 .notice2 {
-    background: #45a29e;
+  background: #45a29e;
 }
-
 .notice3 {
-    background: #123c69;
+  background: #123c69;
 }
-
 .notice4 {
-    background: #8e8d8a;
+  background: #8e8d8a;
 }
-
 span.date {
-    float: right;
+  float: right;
 }
-
 .blank {
-    display: inline-block;
-    width: 20px;
-    height: 10px;
+  display: inline-block;
+  width: 20px;
+  height: 10px;
 }
 
 a.blogs {
-    display: flex;
-    color: #333;
-    align-items: center;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px dashed #ddd;
+  display: flex;
+  color: #333;
+  align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #ddd;
 }
-
 .blogs .thumb {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
-
 .blogs .thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
 .blog-text {
-    width: calc(100% - 80px);
-    padding-left: 20px;
-    height: 90px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.3;
+  width: calc(100% - 80px);
+  padding-left: 20px;
+  height: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
 }
-
 .blog-text h3 {
-    font-size: 18px;
-    font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
 }
-
 
 /*************** 회원가입 ***************/
 .rg {
-    margin-bottom: 30px !important;
+  margin-bottom: 30px !important;
 }
-
 .registerul {
-    padding: 20px 40px;
+  padding: 20px 40px;
 }
 
-/*************** 아이디, 비밀번호 찾기 ***************/
+/****************** 아이디, 비밀번호 찾기 ************/
 .rg.findidpass {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
-
 #findidform,
 #findpwdform {
-    margin: 30px 50px 50px;
-    padding: 50px;
-    border: 1px solid #ddd;
+  margin: 30px 50px 50px;
+  padding: 50px;
+  border: 1px solid #ddd;
 }
 
 footer {
-    padding: 20px 30px;
-    background: #666;
-    color: #fff;
+  padding: 20px 30px;
+  background: #666;
+  color: #fff;
+}
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1340px;
+  }
 }
 
-@media (min-width: 1200px) {
-
-    .container,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl {
-        max-width: 1340px;
-    }
+/* admin list */
+.memtable {
+  font-size: 14px;
+}
+.memtable th {
+  text-align: center;
+  font-weight: 600;
 }

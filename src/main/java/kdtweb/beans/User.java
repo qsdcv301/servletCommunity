@@ -1,6 +1,9 @@
 package kdtweb.beans;
 
+import java.sql.Timestamp;
+
 public class User {
+	private int id;
 	private String userid;
 	private String userpass;
 	private String username;
@@ -10,12 +13,15 @@ public class User {
 	private String useraddr1;
 	private String useraddr2;
 	private String useraddrexc;
+	private Timestamp rdate;
+	private int grade;
 
 	@Override
 	public String toString() {
-		return "User [userid=" + userid + ", userpass=" + userpass + ", username=" + username + ", useremail="
-				+ useremail + ", usertel=" + usertel + ", userpost=" + userpost + ", useraddr1=" + useraddr1
-				+ ", useraddr2=" + useraddr2 + ", useraddexc=" + useraddrexc + "]";
+		return "User [id=" + id + ", userid=" + userid + ", userpass=" + userpass + ", username=" + username
+				+ ", useremail=" + useremail + ", usertel=" + usertel + ", userpost=" + userpost + ", useraddr1="
+				+ useraddr1 + ", useraddr2=" + useraddr2 + ", useraddrexc=" + useraddrexc + ", rdate=" + rdate
+				+ ", grade=" + grade + "]";
 	}
 
 	public String getUserid() {
@@ -86,8 +92,32 @@ public class User {
 		return useraddrexc;
 	}
 
-	public void setUseradderexc(String useraddrexc) {
+	public void setUseraddrexc(String useraddrexc) {
 		this.useraddrexc = useraddrexc;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Timestamp getRdate() {
+		return rdate;
+	}
+
+	public void setRdate(Timestamp rdate) {
+		this.rdate = rdate;
+	}
+
+	public int getGrade() {
+		return grade;
+	}
+
+	public void setGrade(int grade) {
+		this.grade = grade;
 	}
 
 }
