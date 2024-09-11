@@ -2,6 +2,9 @@
     pageEncoding="UTF-8" import="kdtweb.dao.MySqlConnect, java.sql.*" %>
 <%@ include file="include/header.jsp" %>
 <%
+   HttpSession ses = request.getSession();
+   String sessionUserid = (String) ses.getAttribute("userid");
+
    MySqlConnect connBean = new MySqlConnect();
    Connection conn = null;
    PreparedStatement st = null;

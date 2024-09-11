@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="kdtweb.dao.bbs.Board, kdtweb.beans.BoardDto, java.sql.*"%>
 <%@ include file="include/header.jsp" %>
 <script src="js/photo-gallery.js"></script>
 
@@ -99,7 +99,7 @@
                   <li>
                      <a href="#" class="blogs">
                         <div class="thumb">
-                           <img src="images/upload/005.jpg" alt="005" />
+                           <img src="images/upload/006.webp" alt="006" />
                         </div>
                         <div class="blog-text">
                            <h3>기사의 제목을 넣음</h3>
@@ -111,7 +111,7 @@
                   <li>
                      <a href="#" class="blogs">
                         <div class="thumb">
-                           <img src="images/upload/005.jpg" alt="005" />
+                           <img src="images/upload/006.webp" alt="006" />
                         </div>
                         <div class="blog-text">
                            <h3>기사의 제목을 넣음</h3>
@@ -123,7 +123,7 @@
                   <li>
                      <a href="#" class="blogs">
                         <div class="thumb">
-                           <img src="images/upload/005.jpg" alt="005" />
+                           <img src="images/upload/006.webp" alt="006" />
                         </div>
                         <div class="blog-text">
                            <h3>기사의 제목을 넣음</h3>
