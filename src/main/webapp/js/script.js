@@ -103,17 +103,13 @@ $(function(){
              },
              success: function(res){
                
-                if(res > 0){
-                   console.log(res);
-                   alert("이미 존재하는 이메일입니다.");
-                }else{
-                   const tel = $("#tel1").val() + "-" + $("#tel2").val() + "-" + $("#tel3").val();
+                     const tel = $("#tel1").val() + "-" + $("#tel2").val() + "-" + $("#tel3").val();
                    $("#tel").val(tel);   
                    form.submit();
-                }
+    
              }, 
              error: function(){
-                alert("이메일 검증중 오류가 발생했습니다.");
+                alert("에러발행.");
              }
           });
                                    

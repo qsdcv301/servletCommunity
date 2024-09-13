@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="kdtweb.dao.bbs.Board, kdtweb.beans.BoardDto, java.sql.*"%>
+    pageEncoding="UTF-8" import="kdtweb.dao.bbs.Board, kdtweb.beans.BoardDto, java.sql.*, java.util.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="include/header.jsp" %>
 <script src="js/photo-gallery.js"></script>
-
+<%
+    Board bbs = new Board();
+    ArrayList<BoardDto> bbsList = null;
+    
+%>
     <div class="row">
           <div class="col-6">
             <div class="comu-box">
@@ -137,58 +142,25 @@
           </div>
           <div class="col-6">
             <div class="comu-box">
-               <h2>Community</h2>
+            <%
+                try{
+                	bbsList = bbs.listBoard(0, 8);
+                }catch(SQLException e){
+                	
+                }
+                request.setAttribute("bbsList", bbsList);
+            %>
+               <h2><a href="bbs.jsp">Community</a></h2>
                <ul class="noticeul">
+                 <c:forEach var="list" items="${bbsList }"> 
                   <li>
-                     <a href="#">
-                        공지사항 게시판 입니다.
+                     <a href="bbs.jsp?mode=view&num=${list.num }">
+                        ${list.title }
                      </a>
-                     <span class="ndate">2024.07.31</span>
-                  </li>     
-                  <li>
-                     <a href="#">
-                        <span class="blank"></span><i class="ri-corner-down-right-line"></i> 공지사항 게시판 입니다.
-                     </a>
-                     <span class="ndate">2024.07.31</span>
-                  </li>  
-                  <li>
-                     <a href="#">
-                        <span class="blank"></span><span class="blank"></span><i class="ri-corner-down-right-line"></i> 공지사항 게시판 입니다.
-                     </a>
-                     <span class="ndate">2024.07.31</span>
-                  </li>  
-                  <li>
-                     <a href="#">
-                         공지사항 게시판 입니다.
-                     </a>
-                     <span class="ndate">2024.07.31</span>
-                  </li>  
-                  <li>
-                     <a href="#">
-                         공지사항 게시판 입니다.
-                     </a>
-                     <span class="ndate">2024.07.31</span>
-                  </li>  
-                  <li>
-                     <a href="#">
-                         공지사항 게시판 입니다.
-                     </a>
-                     <span class="ndate">2024.07.31</span>
-                  </li>  
-                  <li>
-                     <a href="#">
-                        공지사항 게시판 입니다. 공지사항 게시판 입니다.
-                        공지사항 게시판 입니다.
-                        공지사항 게시판 입니다.
-                     </a>
-                     <span class="ndate">2024.07.31</span>
-                  </li>  
-                  <li>
-                     <a href="#">
-                         공지사항 게시판 입니다.
-                     </a>
-                     <span class="ndate">2024.07.31</span>
-                  </li>               
+                     <span class="ndate">${list.viewDate }</span>
+                  </li>   
+                </c:forEach>    
+             
                </ul>
             </div>
         </div>

@@ -23,7 +23,7 @@
 <body>
     <div class="container position-relative pl-300">
        <header class="position-absolute">
-          <div class="logo"><a href="#"><img src="images/logo.png" alt="kdt community"></a></div>
+          <div class="logo"><a href="index.jsp"><img src="images/logo.png" alt="kdt community"></a></div>
          
       <c:choose>
          <c:when test="${sessionScope.userid == null}">
