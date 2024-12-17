@@ -31,7 +31,7 @@
 
 ### 🔙 백엔드
 
-Java Servlet MyBatis
+JavaServlet
 
 ### 🗄️ 데이터베이스
 
